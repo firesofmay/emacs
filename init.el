@@ -397,6 +397,7 @@
             (setq cider-stacktrace-fill-column 80)
             (setq nrepl-buffer-name-show-port t)
             (setq cider-repl-display-in-current-window t)
+            (setq cider-repl-use-pretty-printing t)
             (setq cider-prompt-save-file-on-load nil)
             (setq cider-interactive-eval-result-prefix ";; => ")
             (setq cider-repl-history-size 1000)
@@ -404,7 +405,8 @@
             (add-hook 'cider-repl-mode-hook 'company-mode)
             (add-hook 'cider-mode-hook 'company-mode)
             (add-hook 'cider-repl-mode-hook 'paredit-mode)
-            (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)))
+            (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode))
+  :bind ("C-l" . cider-repl-clear-buffer))
 
 
 (use-package eshell
