@@ -634,18 +634,6 @@
             (setq highlight-symbol-idle-delay 100))
   :bind (("<f3>" . highlight-symbol-next)))
 
-;; Smart Scan let's you jump between symbols in your
-;; current buffer that matches the one point is on.
-;; Simply put your point on a symbol you want to search
-;; for in your buffer and type either M-n or M-p to
-;; move forward or backward respectively.
-;; https://www.masteringemacs.org/article/smart-scan-jump-symbols-buffer
-;; https://github.com/mickeynp/smart-scan
-(use-package smartscan
-  :defer t
-  :init (global-smartscan-mode 1)
-  :bind ("M-n". smartscan-symbol-go-forward))
-
 ;; Apropos can sort results by relevancy.
 (setq apropos-sort-by-scores t)
 

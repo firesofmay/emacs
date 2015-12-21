@@ -55,7 +55,6 @@
 (depends-on "rainbow-identifiers")
 (depends-on "s")
 (depends-on "smart-mode-line")
-(depends-on "smartscan" :git "https://github.com/mickeynp/smart-scan" :files ("*.el"))
 (depends-on "smex")
 (depends-on "sublime-themes")
 (depends-on "swoop")
