@@ -384,6 +384,10 @@
           (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode))
   :config (add-hook 'vc-checkin-hook 'diff-hl-update))
 
+;; https://github.com/clojure-emacs/cider#repl-configuration
+(defun cider-repl-prompt-on-newline (namespace)
+  "Return a prompt string with newline"
+  (concat namespace ">\n"))
 
 (use-package cider
   :defer t
@@ -398,6 +402,7 @@
             (setq nrepl-buffer-name-show-port t)
             (setq cider-repl-display-in-current-window t)
             (setq cider-repl-use-pretty-printing t)
+            (setq cider-repl-prompt-function 'cider-repl-prompt-on-newline)
             (setq cider-prompt-save-file-on-load nil)
             (setq cider-interactive-eval-result-prefix ";; => ")
             (setq cider-repl-history-size 1000)
@@ -638,7 +643,8 @@
 ;; https://github.com/mickeynp/smart-scan
 (use-package smartscan
   :defer t
-  :init (global-smartscan-mode 1))
+  :init (global-smartscan-mode 1)
+  :bind ("M-n". smartscan-symbol-go-forward))
 
 ;; Apropos can sort results by relevancy.
 (setq apropos-sort-by-scores t)
@@ -738,4 +744,3 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
-
