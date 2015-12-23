@@ -743,42 +743,6 @@
 (setq-default save-place t)
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
-
-;; https://www.masteringemacs.org/article/fixing-mark-commands-transient-mark-mode
-(defun push-mark-no-activate ()
-  "Pushes `point' to `mark-ring' and does not activate the region
-   Equivalent to \\[set-mark-command] when \\[transient-mark-mode] is disabled"
-  (interactive)
-  (push-mark (point) t nil)
-  (message "Pushed mark to ring"))
-
-(global-set-key (kbd "C-`") 'push-mark-no-activate)
-
-(defun jump-to-mark ()
-  "Jumps to the local mark, respecting the `mark-ring' order.
-  This is the same as using \\[set-mark-command] with the prefix argument."
-  (interactive)
-  (set-mark-command 1))
-
-(global-set-key (kbd "M-`") 'jump-to-mark)
-
-(defun exchange-point-and-mark-no-activate ()
-  "Identical to \\[exchange-point-and-mark] but will not activate the region."
-  (interactive)
-  (exchange-point-and-mark)
-  (deactivate-mark nil))
-
-(define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
-
-;; http://endlessparentheses.com/faster-pop-to-mark-command.html
-;; When popping the mark, continue popping until the cursor actually moves
-(defadvice pop-to-mark-command (around ensure-new-position activate)
-  (let ((p (point)))
-    (dotimes (i 10)
-      (when (= p (point)) ad-do-it))))
-
-(setq set-mark-command-repeat-pop t)
-
 ;; https://github.com/clojure-emacs/cider/issues/1479
 ;; Fix for "{" in clojure repl
 (add-hook 'cider-repl-mode-hook
