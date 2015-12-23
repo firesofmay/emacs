@@ -770,3 +770,12 @@
 
 (define-key global-map [remap exchange-point-and-mark] 'exchange-point-and-mark-no-activate)
 
+;; https://github.com/clojure-emacs/cider/issues/1479
+;; Fix for "{" in clojure repl
+(add-hook 'cider-repl-mode-hook
+          '(lambda ()
+             (define-key cider-repl-mode-map "{" #'paredit-open-curly)
+             (define-key cider-repl-mode-map "}" #'paredit-close-curly)))
+
+
+;; full screen magit-status
