@@ -4,6 +4,7 @@
 (depends-on "ace-jump-mode")
 (depends-on "auto-compile" :git "https://github.com/tarsius/auto-compile" :ref "822c6fc0ffc84bd567482132" :files ("*.el"))
 (depends-on "badger-theme")
+(depends-on "beacon")
 (depends-on "bind-key")
 (depends-on "browse-kill-ring")
 (depends-on "cider" :git "https://github.com/clojure-emacs/cider" :ref "v0.10.0" :files ("*.el"))

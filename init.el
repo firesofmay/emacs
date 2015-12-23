@@ -635,6 +635,14 @@
             (setq highlight-symbol-idle-delay 100))
   :bind (("<f5>" . highlight-symbol-next)))
 
+;; https://github.com/Malabarba/beacon
+;; http://endlessparentheses.com/beacon-never-lose-your-cursor-again.html
+(use-package beacon
+  :init (beacon-mode 1)
+  :config (progn
+            (setq beacon-color "#666600")))
+
+
 ;; Apropos can sort results by relevancy.
 (setq apropos-sort-by-scores t)
 
