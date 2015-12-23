@@ -19,3 +19,4 @@ etc/emacs-custom.el
 /smex-items
 /.mc-lists.el
 .places
+/request

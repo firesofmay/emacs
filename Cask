@@ -6,6 +6,8 @@
 (depends-on "badger-theme")
 (depends-on "beacon")
 (depends-on "bind-key")
+;; M-x clojars - to search clojars.org for a Clojure library
+(depends-on "clojars")
 (depends-on "browse-kill-ring")
 (depends-on "cider" :git "https://github.com/clojure-emacs/cider" :ref "v0.10.0" :files ("*.el"))
 (depends-on "cl-lib-highlight")
