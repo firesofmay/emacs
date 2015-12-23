@@ -633,7 +633,7 @@
   :init (my-highlight-symbol-mode 1)
   :config (progn
             (setq highlight-symbol-idle-delay 100))
-  :bind (("<f3>" . highlight-symbol-next)))
+  :bind (("<f5>" . highlight-symbol-next)))
 
 ;; Apropos can sort results by relevancy.
 (setq apropos-sort-by-scores t)
