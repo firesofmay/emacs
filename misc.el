@@ -163,6 +163,12 @@
 
 ;;; End Mark related Changes
 
+;; C-s and C-r are swapped with regex-aware incremental search functions.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+
 ;; welcome message
 (defun user-first-name ()
   (car  (split-string user-full-name)))
