@@ -412,7 +412,8 @@
             (add-hook 'cider-mode-hook 'company-mode)
             (add-hook 'cider-repl-mode-hook 'paredit-mode)
             (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode))
-  :bind ("C-l" . cider-repl-clear-buffer))
+  :bind (("C-l" . cider-repl-clear-buffer)
+         ("C-c M-c" . cider-connect)))
 
 
 (use-package eshell
