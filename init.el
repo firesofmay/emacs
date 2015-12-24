@@ -413,7 +413,9 @@
             (add-hook 'cider-repl-mode-hook 'paredit-mode)
             (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode))
   :bind (("C-l" . cider-repl-clear-buffer)
-         ("C-c M-c" . cider-connect)))
+         ("C-c M-c" . cider-connect)
+         ;; C-M-q broke for cider-repl for some reason, so add it manually
+         ("C-M-q" . indent-sexp)))
 
 
 (use-package eshell
